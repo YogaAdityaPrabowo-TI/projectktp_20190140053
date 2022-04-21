@@ -54,8 +54,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </div>
         </nav>
         <br>
-        <div align="center">Database KTP Indonesia</div>
-        
+        <div th:insert="/menu :: main_menu"></div>
+        <div align="center">Database KTP Indonesia</div>      
         <a href="/create">Data baru</a>
         <a href="/search">Cari Data</a>
         <div class="table-responsive">
@@ -67,7 +67,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <th>Alamat</th>
                     <th>Action</th>
                 </tr>
-                <tr>
+                <tr th:each="godata:${goData}">
+                    <td th:text="${godata.noktp}"></td>
+                    <td th:text="${godata.nama}"></td>
                     <td></td>
                     <td></td>
                     <td></td>
