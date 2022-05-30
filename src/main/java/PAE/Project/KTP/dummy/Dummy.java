@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Dummy.findAll", query = "SELECT d FROM Dummy d"),
     @NamedQuery(name = "Dummy.findById", query = "SELECT d FROM Dummy d WHERE d.id = :id"),
-    @NamedQuery(name = "Dummy.findByTgllahir", query = "SELECT d FROM Dummy d WHERE d.tgllahir = :tgllahir")})
+    @NamedQuery(name = "Dummy.findByTanggal", query = "SELECT d FROM Dummy d WHERE d.tanggal = :tanggal")})
 public class Dummy implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -36,9 +36,9 @@ public class Dummy implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "tgllahir")
+    @Column(name = "tanggal")
     @Temporal(TemporalType.DATE)
-    private Date tgllahir;
+    private Date tanggal;
     @Lob
     @Column(name = "gambar")
     private byte[] gambar;
@@ -58,12 +58,12 @@ public class Dummy implements Serializable {
         this.id = id;
     }
 
-    public Date getTgllahir() {
-        return tgllahir;
+    public Date getTanggal() {
+        return tanggal;
     }
 
-    public void setTgllahir(Date tgllahir) {
-        this.tgllahir = tgllahir;
+    public void setTanggal(Date tanggal) {
+        this.tanggal = tanggal;
     }
 
     public byte[] getGambar() {
